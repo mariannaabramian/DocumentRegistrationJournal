@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -19,6 +20,9 @@ public class User {
 
     @Transient
     private String notStored;
+
+    @Temporal(TemporalType.DATE)
+    private Date registrationDate = new Date();
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Group group;
