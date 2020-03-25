@@ -10,8 +10,6 @@ public class User {
     @GeneratedValue
     private int id;
 
-
-
     @Column(length = 50)
     private String login;
 
