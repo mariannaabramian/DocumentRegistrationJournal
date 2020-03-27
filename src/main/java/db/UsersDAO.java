@@ -12,7 +12,7 @@ public class UsersDAO {
     private EntityManager manager;
 
     public UsersDAO(EntityManager manager) {
-        Objects.requireNonNull(manager, "EntityManager can't ");
+        Objects.requireNonNull(manager, "EntityManager shouldn't be null");
         this.manager = manager;
     }
 

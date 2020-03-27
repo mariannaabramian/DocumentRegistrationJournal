@@ -25,8 +25,8 @@ public class Journal {
     @ManyToOne
     private User inspector;
 
-    @Column
-    private int registrationRejectionId;
+    @Enumerated(EnumType.STRING)
+    private RegistrarionRejectReason registrationRejectReason;
 
     @Column
     private String validationErrorText;

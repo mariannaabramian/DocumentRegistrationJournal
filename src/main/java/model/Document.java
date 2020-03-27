@@ -37,4 +37,76 @@ public class Document {
     // например, отправлено уведомление импортеру об обработке Заявления
     // или посчитан коэффициент по Отчету
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public DocType getDocType() {
+        return docType;
+    }
+
+    public void setDocType(DocType docType) {
+        this.docType = docType;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getImporterDocumentNumber() {
+        return importerDocumentNumber;
+    }
+
+    public void setImporterDocumentNumber(String importerDocumentNumber) {
+        this.importerDocumentNumber = importerDocumentNumber;
+    }
+
+    public Importer getImporter() {
+        return importer;
+    }
+
+    public void setImporter(Importer importer) {
+        this.importer = importer;
+    }
+
+    public PaymentApplication getPaymentApplication() {
+        return paymentApplication;
+    }
+
+    public void setPaymentApplication(PaymentApplication paymentApplication) {
+        this.paymentApplication = paymentApplication;
+    }
+
+    public QauntityReport getQuantityReport() {
+        return quantityReport;
+    }
+
+    public void setQuantityReport(QauntityReport quantityReport) {
+        this.quantityReport = quantityReport;
+    }
+
+    public int getRegistrationNumber() {
+        return RegistrationNumber;
+    }
+
+    public void setRegistrationNumber(int registrationNumber) {
+        RegistrationNumber = registrationNumber;
+    }
+
+    public boolean isProcessedFlag() {
+        return processedFlag;
+    }
+
+    public void setProcessedFlag(boolean processedFlag) {
+        this.processedFlag = processedFlag;
+    }
 }
