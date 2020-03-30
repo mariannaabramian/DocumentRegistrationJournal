@@ -1,8 +1,8 @@
-package db;
+package ru.levelup.db;
 
 import com.sun.istack.Nullable;
-import model.Group;
-import model.User;
+import ru.levelup.model.Group;
+import ru.levelup.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;

@@ -1,10 +1,10 @@
-package db;
+package ru.levelup.db;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import model.Group;
-import model.User;
+import ru.levelup.model.Group;
+import ru.levelup.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,9 +1,6 @@
-package model;
+package ru.levelup.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ApplicationGood {
@@ -11,8 +8,8 @@ public class ApplicationGood {
     @GeneratedValue
     private int id;
 
-    @Column
-    private String TNCode; //Код товарной номенклатуре
+    @ManyToOne
+    private Good good; //Код товарной номенклатуре
 
     @Column
     private String Quantity; //Количество (в единицах измерения)

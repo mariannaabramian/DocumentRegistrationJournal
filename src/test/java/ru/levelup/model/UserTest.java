@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 import org.junit.Test;
 

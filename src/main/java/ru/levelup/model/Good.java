@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class GoodsTN {
+public class Good {
     @Id
     @GeneratedValue
     private int id;
@@ -15,7 +15,7 @@ public class GoodsTN {
     String goodName;
 
     @Column
-    String TNCode;
+    String GoodNomenclatureCode;
 
     public int getId() {
         return id;
@@ -33,11 +33,11 @@ public class GoodsTN {
         this.goodName = goodName;
     }
 
-    public String getTNCode() {
-        return TNCode;
+    public String getGoodNomenclatureCode() {
+        return GoodNomenclatureCode;
     }
 
-    public void setTNCode(String TNCode) {
-        this.TNCode = TNCode;
+    public void setGoodNomenclatureCode(String goodNomenclatureCode) {
+        GoodNomenclatureCode = goodNomenclatureCode;
     }
 }

@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +11,20 @@ public class Importer {
     @Id
     @GeneratedValue
     private int id;
+
+    public Importer(String importerName, String INN, String country, String city, String streetHous,
+                    String headFIO, String accountantFIO) {
+        this.importerName = importerName;
+        this.INN = INN;
+        this.country = country;
+        this.city = city;
+        this.streetHouse = streetHous;
+        this.headFIO = headFIO;
+        this.accountantFIO = accountantFIO;
+    }
+
+    public Importer() {
+    }
 
     @Column
     private String importerName; // Название организации или ФИО ИП

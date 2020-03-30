@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 import javax.persistence.*;
 
@@ -9,6 +9,16 @@ public class Document {
     @Id
     @GeneratedValue
     private int id;
+
+    public Document(DocType docType, String title, String importerDocumentNumber, Importer importer) {
+        this.docType = docType;
+        this.title = title;
+        this.importerDocumentNumber = importerDocumentNumber;
+        this.importer = importer;
+    }
+
+    public Document() {
+    }
 
     @Enumerated(EnumType.ORDINAL) // тип документа: Заявление, Отчет
     private DocType docType;
@@ -29,7 +39,7 @@ public class Document {
     private QauntityReport quantityReport; // Отчет об объемах ..., если другой тип документа то NULL
 
     @Column
-    private int RegistrationNumber;
+    private String RegistrationNumber;
 
     @Column
     private boolean processedFlag; // флаг того что правильный  зарегистрированный документ обработан, т.е.
@@ -94,11 +104,11 @@ public class Document {
         this.quantityReport = quantityReport;
     }
 
-    public int getRegistrationNumber() {
+    public String getRegistrationNumber() {
         return RegistrationNumber;
     }
 
-    public void setRegistrationNumber(int registrationNumber) {
+    public void setRegistrationNumber(String registrationNumber) {
         RegistrationNumber = registrationNumber;
     }
 

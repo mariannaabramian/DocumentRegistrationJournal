@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 import javax.persistence.*;
 
@@ -8,8 +8,8 @@ public class ReportGood {
     @GeneratedValue
     private int id;
 
-    @Column
-    private String TNCode; //Код товарной номенклатуре
+    @ManyToOne
+    private Good good; //Код товарной номенклатуре
 
     @Column
     private String Quantity; //Количество товара за отчетный период

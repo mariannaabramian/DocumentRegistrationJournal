@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 public enum UserStatus {
     REGISTERED,

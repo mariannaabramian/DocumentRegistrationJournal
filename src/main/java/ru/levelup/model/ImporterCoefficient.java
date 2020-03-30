@@ -1,4 +1,4 @@
-package model;
+package ru.levelup.model;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
