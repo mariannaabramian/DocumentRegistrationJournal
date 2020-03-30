@@ -23,34 +23,42 @@ public class QauntityReport {
     private List<ReportGood> members;
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public Document getDocument() {
+
         return document;
     }
 
     public void setDocument(Document document) {
+
         this.document = document;
     }
 
     public Date getBeginDate() {
+
         return beginDate;
     }
 
     public void setBeginDate(Date beginDate) {
+
         this.beginDate = beginDate;
     }
 
     public Date getEndDate() {
+
         return endDate;
     }
 
     public void setEndDate(Date endDate) {
+
         this.endDate = endDate;
     }
 }

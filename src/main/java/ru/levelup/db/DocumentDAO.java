@@ -11,7 +11,7 @@ public class DocumentDAO {
     private EntityManager manager;
 
     public DocumentDAO(EntityManager manager) {
-        Objects.requireNonNull(manager, "EntityManager can't ");
+        Objects.requireNonNull(manager, "EntityManager shouldn't be null");
         this.manager = manager;
     }
 
@@ -53,7 +53,6 @@ public class DocumentDAO {
         manager.getTransaction().commit();
 
         return journal;
-
     }
 
     public Journal SetDocumentValidationFailed(Journal journal, User inspector, String validationErrorText){
@@ -93,7 +92,6 @@ public class DocumentDAO {
         manager.getTransaction().commit();
 
         return journal;
-
     }
 
     public  Journal SetDocumentRegistrationRejected(Journal journal, User inspector, RegistrarionRejectReason registrationRejectionReason){

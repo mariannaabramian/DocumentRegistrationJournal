@@ -22,34 +22,42 @@ public class PaymentApplication {
     private List<ApplicationGood> members;
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public Document getDocument() {
+
         return document;
     }
 
     public void setDocument(Document document) {
+
         this.document = document;
     }
 
     public String getPaymentDocNumber() {
+
         return paymentDocNumber;
     }
 
     public void setPaymentDocNumber(String paymentDocNumber) {
+
         this.paymentDocNumber = paymentDocNumber;
     }
 
     public int getTotalQuantity() {
+
         return totalQuantity;
     }
 
     public void setTotalQuantity(int totalQuantity) {
+
         this.totalQuantity = totalQuantity;
     }
 }

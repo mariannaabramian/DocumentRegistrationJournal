@@ -18,26 +18,32 @@ public class Good {
     String GoodNomenclatureCode;
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public String getGoodName() {
+
         return goodName;
     }
 
     public void setGoodName(String goodName) {
+
         this.goodName = goodName;
     }
 
     public String getGoodNomenclatureCode() {
+
         return GoodNomenclatureCode;
     }
 
     public void setGoodNomenclatureCode(String goodNomenclatureCode) {
+
         GoodNomenclatureCode = goodNomenclatureCode;
     }
 }

@@ -16,26 +16,29 @@ public class Group {
     @OneToMany(mappedBy = "group")
     private List<User> users;
 
-
     public Group(String name) {
         this.name = name;
     }
 
-    public Group() {
-    }
+    public Group() {}
+
     public int getId() {
+
         return id;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 }

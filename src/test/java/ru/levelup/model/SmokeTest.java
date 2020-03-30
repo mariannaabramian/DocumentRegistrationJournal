@@ -18,7 +18,6 @@ public class SmokeTest {
     public void connect() {
         factory = Persistence.createEntityManagerFactory("TestPersistenceUnit");
         manager = factory.createEntityManager();
-
     }
 
     @After
@@ -53,13 +52,9 @@ public class SmokeTest {
         manager.getTransaction().commit();
         manager.refresh(foundUser);
 
-
-
-
     }
 
     @Test
-
     public void testSearchGroups(){
         createUserTest();
 
@@ -73,12 +68,8 @@ public class SmokeTest {
                         .setParameter("status", UserStatus.REMOVED)
                         .getResultList();
 
-
         Assert.assertEquals(1, foundUser.size());
         Assert.assertEquals("test-user", foundUser.get(0).getLogin());
-
-
-
 
     }
 }

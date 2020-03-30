@@ -13,17 +13,6 @@ public class Journal {
     @GeneratedValue
     private int id; // id записи в журнале
 
-    public Journal(Document document, DocStatus docStatus,Date statusChangeDate, User inspector) {
-
-        this.document = document;
-        this.status = docStatus;
-        this.statusChangeDate = statusChangeDate;
-        this.inspector = inspector;
-    }
-
-    public Journal() {
-    }
-
     @ManyToOne
     private Document document;
 
@@ -43,46 +32,57 @@ public class Journal {
     private String validationErrorText;
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public Document getDocument() {
+
         return document;
     }
 
     public void setDocument(Document document) {
+
         this.document = document;
     }
 
     public DocStatus getStatus() {
+
         return status;
     }
 
     public void setStatus(DocStatus status) {
+
         this.status = status;
     }
 
     public Date getStatusChangeDate() {
+
         return statusChangeDate;
     }
 
     public void setStatusChangeDate(Date statusChangeDate) {
+
         this.statusChangeDate = statusChangeDate;
     }
 
     public User getInspector() {
+
         return inspector;
     }
 
     public void setInspector(User inspector) {
+
         this.inspector = inspector;
     }
 
     public RegistrarionRejectReason getRegistrationRejectReason() {
+
         return registrationRejectReason;
     }
 
@@ -91,10 +91,12 @@ public class Journal {
     }
 
     public String getValidationErrorText() {
+
         return validationErrorText;
     }
 
     public void setValidationErrorText(String validationErrorText) {
+
         this.validationErrorText = validationErrorText;
     }
 }

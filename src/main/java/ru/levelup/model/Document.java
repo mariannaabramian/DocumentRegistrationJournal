@@ -10,16 +10,6 @@ public class Document {
     @GeneratedValue
     private int id;
 
-    public Document(DocType docType, String title, String importerDocumentNumber, Importer importer) {
-        this.docType = docType;
-        this.title = title;
-        this.importerDocumentNumber = importerDocumentNumber;
-        this.importer = importer;
-    }
-
-    public Document() {
-    }
-
     @Enumerated(EnumType.ORDINAL) // тип документа: Заявление, Отчет
     private DocType docType;
 
@@ -43,36 +33,42 @@ public class Document {
 
     @Column
     private boolean processedFlag; // флаг того что правильный  зарегистрированный документ обработан, т.е.
-    // выполнены необходимые действия
-    // например, отправлено уведомление импортеру об обработке Заявления
-    // или посчитан коэффициент по Отчету
-
+                                   // выполнены необходимые действия
+                                   // например, отправлено уведомление импортеру об обработке Заявления
+                                   // или посчитан коэффициент по Отчету
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public DocType getDocType() {
+
         return docType;
     }
 
     public void setDocType(DocType docType) {
+
         this.docType = docType;
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public void setTitle(String title) {
+
         this.title = title;
     }
 
     public String getImporterDocumentNumber() {
+
         return importerDocumentNumber;
     }
 
@@ -81,14 +77,17 @@ public class Document {
     }
 
     public Importer getImporter() {
+
         return importer;
     }
 
     public void setImporter(Importer importer) {
+
         this.importer = importer;
     }
 
     public PaymentApplication getPaymentApplication() {
+
         return paymentApplication;
     }
 
@@ -97,26 +96,32 @@ public class Document {
     }
 
     public QauntityReport getQuantityReport() {
+
         return quantityReport;
     }
 
     public void setQuantityReport(QauntityReport quantityReport) {
+
         this.quantityReport = quantityReport;
     }
 
     public String getRegistrationNumber() {
+
         return RegistrationNumber;
     }
 
     public void setRegistrationNumber(String registrationNumber) {
+
         RegistrationNumber = registrationNumber;
     }
 
     public boolean isProcessedFlag() {
+
         return processedFlag;
     }
 
     public void setProcessedFlag(boolean processedFlag) {
+
         this.processedFlag = processedFlag;
     }
 }

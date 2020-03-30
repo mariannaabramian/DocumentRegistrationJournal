@@ -27,9 +27,7 @@ public class UsersDAO {
         }
 
         manager.getTransaction().commit();
-
         return group;
-
     }
 
     @Nullable
@@ -41,8 +39,8 @@ public class UsersDAO {
         } catch (NoResultException cause) {
             return null;
         }
-
     }
+
     public User createUser(String login, Group group) {
         User user = new User();
         user.setLogin(login);
@@ -57,7 +55,6 @@ public class UsersDAO {
         }
 
         manager.getTransaction().commit();
-
         return user;
     }
 

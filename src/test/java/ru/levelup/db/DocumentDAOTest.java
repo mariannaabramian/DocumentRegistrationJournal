@@ -68,8 +68,5 @@ public class DocumentDAOTest {
         documentsJournal.SetDocumentValidated(journal, inspector);
 
 
-
-
-
     }
 }

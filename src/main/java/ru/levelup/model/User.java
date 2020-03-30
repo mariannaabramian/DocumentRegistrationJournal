@@ -16,41 +16,26 @@ public class User {
     @Enumerated(EnumType.ORDINAL)
     private UserStatus status;
 
-    @Transient
-    private String notStored;
-
     @Temporal(TemporalType.DATE)
     private Date registrationDate = new Date();
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Group group;
 
-    public int getX() {
-        return 999;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public Group getGroup() {
-        return group;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public String getLogin() {
+        return login;
     }
 
-    public void setGroup(Group group) {
-        this.group = group;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public UserStatus getStatus() {
@@ -59,5 +44,21 @@ public class User {
 
     public void setStatus(UserStatus status) {
         this.status = status;
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }
