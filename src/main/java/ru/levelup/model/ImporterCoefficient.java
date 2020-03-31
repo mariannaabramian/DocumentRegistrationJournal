@@ -1,18 +1,17 @@
 package ru.levelup.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class ImporterCoefficient { // коэффициент
     @Id
     @GeneratedValue
     private int id;
 
-    @Column
+    @OneToOne(optional = false)
     private Importer importer;
 
-    @Column
+    @Column(nullable = true)
     private int coefficient;
 
     public int getId() {

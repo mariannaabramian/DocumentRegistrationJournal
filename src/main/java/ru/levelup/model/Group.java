@@ -10,35 +10,31 @@ public class Group {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "group")
     private List<User> users;
 
+    public Group() {}
+
     public Group(String name) {
         this.name = name;
     }
 
-    public Group() {}
-
     public int getId() {
-
         return id;
     }
 
     public String getName() {
-
         return name;
     }
 
     public void setId(int id) {
-
         this.id = id;
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
 }

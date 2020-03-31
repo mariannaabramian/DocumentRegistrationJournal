@@ -8,14 +8,17 @@ public class ApplicationGood {
     @GeneratedValue
     private int id;
 
-    @ManyToOne
-    private Good good; //Код товарной номенклатуре
+    @ManyToOne(optional = false)
+    private PaymentApplication paymentApplication;
 
-    @Column
-    private String Quantity; //Количество (в единицах измерения)
+    @ManyToOne(optional = false)
+    private Good good; // Код по товарной номенклатуре
 
-    @Column
-    private String Price; //Цена за единицу
+    @Column(nullable = false)
+    private int quantity; // Количество (в единицах измерения)
+
+    @Column(nullable = false)
+    private float price; // Цена за единицу
 
     public int getId() {
         return id;
@@ -33,19 +36,19 @@ public class ApplicationGood {
         this.good = good;
     }
 
-    public String getQuantity() {
-        return Quantity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuantity(String quantity) {
-        Quantity = quantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public String getPrice() {
-        return Price;
+    public float getPrice() {
+        return price;
     }
 
-    public void setPrice(String price) {
-        Price = price;
+    public void setPrice(float price) {
+        this.price = price;
     }
 }

@@ -34,7 +34,7 @@ public class DocumentDAOTest {
 
 
     @Test
-    public void LoadDocument(){
+    public void storeDocument(){
 
         Group group = new Group();
         group.setName("Инспектор");
@@ -64,8 +64,8 @@ public class DocumentDAOTest {
 
         Journal journal = new Journal();
 
-        documentsJournal.LoadDocument(importer, document, journal, inspector);
-        documentsJournal.SetDocumentValidated(journal, inspector);
+        documentsJournal.storeDocument(importer, document, journal, inspector);
+        documentsJournal.setDocumentValidated(journal, inspector);
 
 
     }

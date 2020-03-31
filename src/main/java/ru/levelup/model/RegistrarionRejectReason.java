@@ -1,7 +1,7 @@
 package ru.levelup.model;
 
 public enum RegistrarionRejectReason {
-    VALIDATIONERROR,
-    INSPECTORDESICION
+    VALIDATION_ERROR,
+    INSPECTOR_DESICION
 }
 

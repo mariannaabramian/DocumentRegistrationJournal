@@ -8,14 +8,17 @@ public class ReportGood {
     @GeneratedValue
     private int id;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    private QauntityReport qauntityReport;
+
+    @ManyToOne(optional = false)
     private Good good; //Код товарной номенклатуре
 
-    @Column
-    private String Quantity; //Количество товара за отчетный период
+    @Column(nullable = false)
+    private String quantity; //Количество товара за отчетный период
 
-    @Column
-    private String RetailPrice; //Розничная цена
+    @Column(nullable = false)
+    private String retailPrice; //Розничная цена
 
     public int getId() {
         return id;
@@ -34,18 +37,18 @@ public class ReportGood {
     }
 
     public String getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
     public void setQuantity(String quantity) {
-        Quantity = quantity;
+        this.quantity = quantity;
     }
 
     public String getRetailPrice() {
-        return RetailPrice;
+        return retailPrice;
     }
 
     public void setRetailPrice(String retailPrice) {
-        RetailPrice = retailPrice;
+        this.retailPrice = retailPrice;
     }
 }

@@ -11,39 +11,33 @@ public class Good {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(nullable = false)
     String goodName;
 
-    @Column
-    String GoodNomenclatureCode;
+    @Column(nullable = false)
+    String goodNomenclatureCode;
 
     public int getId() {
-
         return id;
     }
 
     public void setId(int id) {
-
         this.id = id;
     }
 
     public String getGoodName() {
-
         return goodName;
     }
 
     public void setGoodName(String goodName) {
-
         this.goodName = goodName;
     }
 
     public String getGoodNomenclatureCode() {
-
-        return GoodNomenclatureCode;
+        return goodNomenclatureCode;
     }
 
     public void setGoodNomenclatureCode(String goodNomenclatureCode) {
-
-        GoodNomenclatureCode = goodNomenclatureCode;
+        this.goodNomenclatureCode = goodNomenclatureCode;
     }
 }

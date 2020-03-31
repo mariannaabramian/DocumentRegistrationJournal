@@ -10,7 +10,7 @@ public class User {
     @GeneratedValue
     private int id;
 
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     private String login;
 
     @Enumerated(EnumType.ORDINAL)

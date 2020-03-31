@@ -16,7 +16,7 @@ public class DocumentDAO {
     }
 
     // Загружаем XML документ
-    public Journal LoadDocument(Importer importer, Document document, Journal journal, User inspector){
+    public Journal storeDocument(Importer importer, Document document, Journal journal, User inspector){
         document.setImporter(importer);
         journal.setDocument(document);
         journal.setInspector(inspector);
@@ -38,7 +38,7 @@ public class DocumentDAO {
         return journal;
     }
 
-    public Journal SetDocumentValidated(Journal journal, User inspector){
+    public Journal setDocumentValidated(Journal journal, User inspector){
         journal.setStatus(DocStatus.VALIDATED);
         journal.setInspector(inspector);
 
@@ -55,8 +55,8 @@ public class DocumentDAO {
         return journal;
     }
 
-    public Journal SetDocumentValidationFailed(Journal journal, User inspector, String validationErrorText){
-        journal.setStatus(DocStatus.VALIDATIONERROR);
+    public Journal setDocumentValidationFailed(Journal journal, User inspector, String validationErrorText){
+        journal.setStatus(DocStatus.VALIDATION_ERROR);
         journal.setInspector(inspector);
         journal.setValidationErrorText(validationErrorText);
 
@@ -74,7 +74,7 @@ public class DocumentDAO {
     }
 
 
-    public Journal SetDocumentRegistered(Journal journal, User inspector, String registrationNumber){
+    public Journal setDocumentRegistered(Journal journal, User inspector, String registrationNumber){
         journal.setStatus(DocStatus.REGISTERED);
         journal.setInspector(inspector);
         Document document = journal.getDocument();
@@ -94,8 +94,8 @@ public class DocumentDAO {
         return journal;
     }
 
-    public  Journal SetDocumentRegistrationRejected(Journal journal, User inspector, RegistrarionRejectReason registrationRejectionReason){
-        journal.setStatus(DocStatus.REGISTRATIONREJECTED);
+    public  Journal setDocumentRegistrationRejected(Journal journal, User inspector, RegistrarionRejectReason registrationRejectionReason){
+        journal.setStatus(DocStatus.REGISTRATION_REJECTED);
         journal.setInspector(inspector);
         journal.setRegistrationRejectReason(registrationRejectionReason);
 
@@ -113,8 +113,8 @@ public class DocumentDAO {
 
     }
 
-    public  Journal SetDocumentUnderConsidaration(Journal journal, User inspector){
-        journal.setStatus(DocStatus.UNDERCONSIDARATION);
+    public  Journal setDocumentUnderConsidaration(Journal journal, User inspector){
+        journal.setStatus(DocStatus.UNDER_CONSIDARATION);
         journal.setInspector(inspector);
 
         manager.getTransaction().begin();
@@ -131,7 +131,7 @@ public class DocumentDAO {
 
     }
 
-    public Journal SetDocumentProcessed(Journal journal, User inspector){
+    public Journal setDocumentProcessed(Journal journal, User inspector){
         journal.setStatus(DocStatus.PROCESSED);
         journal.setInspector(inspector);
         Document document = journal.getDocument();
@@ -151,10 +151,5 @@ public class DocumentDAO {
         return journal;
 
     }
-
-
-
-
-
 
 }
