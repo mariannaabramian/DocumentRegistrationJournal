@@ -13,6 +13,9 @@ public class User {
     @Column(nullable = false, length = 50)
     private String login;
 
+    @Column(length = 50, nullable = false)
+    private String password;
+
     @Enumerated(EnumType.ORDINAL)
     private UserStatus status;
 
@@ -60,5 +63,13 @@ public class User {
 
     public void setGroup(Group group) {
         this.group = group;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
