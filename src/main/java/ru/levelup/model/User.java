@@ -4,26 +4,35 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table
 public class User {
-
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(nullable = false, length = 50)
+    @Column(length = 50, nullable = false, unique = true)
     private String login;
 
     @Column(length = 50, nullable = false)
     private String password;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private UserStatus status;
 
-    @Temporal(TemporalType.DATE)
-    private Date registrationDate = new Date();
+    @Transient
+    private String notStored;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
+//    @ManyToMany(mappedBy = "users")
+//    private List<Group> group;
     private Group group;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date registrationDate = new Date();
+
+    public int getX() {
+        return 999;
+    }
 
     public int getId() {
         return id;
@@ -41,22 +50,6 @@ public class User {
         this.login = login;
     }
 
-    public UserStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(UserStatus status) {
-        this.status = status;
-    }
-
-    public Date getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(Date registrationDate) {
-        this.registrationDate = registrationDate;
-    }
-
     public Group getGroup() {
         return group;
     }
@@ -65,11 +58,27 @@ public class User {
         this.group = group;
     }
 
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(UserStatus status) {
+        this.status = status;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 }

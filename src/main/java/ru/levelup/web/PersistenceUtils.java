@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.ServletContext;
 
+
+// дурацкий класс
+//по контексту достает factory
+
 public class PersistenceUtils {
     public static EntityManager createManager(ServletContext context) {
         EntityManagerFactory factory = (EntityManagerFactory) context.getAttribute("factory");

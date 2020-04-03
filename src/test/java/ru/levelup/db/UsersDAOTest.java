@@ -80,7 +80,7 @@ public class UsersDAOTest {
         manager.persist(g);
         manager.getTransaction().commit();
 
-        User user = users.createUser("login1", g);
+        User user = users.createUser("login1", "pass",g);
         assertNotNull(user);
         assertEquals("login1", user.getLogin());
         assertNotNull(user.getGroup());
@@ -98,6 +98,7 @@ public class UsersDAOTest {
         User user = new User();
         user.setLogin("login2");
         user.setGroup(g);
+        user.setPassword("111");
 
         manager.getTransaction().begin();
         manager.persist(g);

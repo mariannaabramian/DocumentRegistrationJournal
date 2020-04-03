@@ -34,11 +34,12 @@ public class SmokeTest {
     public void createUserTest() {
         User user = new User();
         user.setLogin("test-user");
+        user.setPassword("111");
 
         Group group = new Group();
         group.setName("test-group");
         user.setGroup(group);
-        user.setStatus(UserStatus.REMOVED);
+        user.setStatus(UserStatus.ACTIVE);
 
 
         manager.getTransaction().begin();
