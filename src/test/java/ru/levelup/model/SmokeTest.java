@@ -66,7 +66,7 @@ public class SmokeTest {
 
         List<User> foundUser =
                 manager.createQuery("SELECT u from User u where u.status = :status", User.class)
-                        .setParameter("status", UserStatus.REMOVED)
+                        .setParameter("status", UserStatus.ACTIVE)
                         .getResultList();
 
         Assert.assertEquals(1, foundUser.size());
