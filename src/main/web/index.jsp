@@ -23,6 +23,7 @@
     <p>
       <input type="submit" value="View journal">
       ///kk
+      // kkk
     </p>
   </c:otherwise>
 </c:choose>
