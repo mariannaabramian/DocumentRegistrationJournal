@@ -19,7 +19,7 @@ public class Document {
     @Column(nullable = true, length = 50)
     private String importerDocumentNumber; // внутренний номер документа в системе Импортера
 
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Importer importer; // импортер
 
     //@OneToOne

@@ -1,9 +1,7 @@
 package ru.levelup.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 // Организация - Импортер
 @Entity
@@ -11,6 +9,9 @@ public class Importer {
     @Id
     @GeneratedValue
     private int id;
+
+    @OneToMany(mappedBy = "importer")
+    private List<Document> documents;
 
     @Column(nullable = false)
     private String importerName; // Название организации или ФИО ИП

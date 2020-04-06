@@ -1,5 +1,6 @@
 package ru.levelup.web;
 
+import ru.levelup.db.DocumentsDAO;
 import ru.levelup.db.UsersDAO;
 
 import javax.persistence.EntityManager;
@@ -21,10 +22,15 @@ public class ApplicationListener implements ServletContextListener {
         // или создать настройки стартовые
         // ничего не начнется пока этот метод не закончится. тут можно все инициализировать
         EntityManager manager = factory.createEntityManager();
-        UsersDAO users = new UsersDAO(manager);
-        if (users.findGroupByName("test") == null) {
-            users.createGroup("test");
+        UsersDAO usersDAO = new UsersDAO(manager);
+        if (usersDAO.findGroupByName("test") == null) {
+            usersDAO.createGroup("test");
         }
+
+        /*DocumentsDAO documentsDAO = new DocumentsDAO(manager);
+        documentsDAO.addImporter("ООО РосИмпорт1", "1234567890", "Россия",
+                "Санкт-Петербург", "1-ая Советскяа улица д. 5", "Иванов Иван Иванович",
+                "Петрова Ларисса Ивановна");*/
     }
 
     @Override

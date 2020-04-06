@@ -20,6 +20,9 @@
     <p>
       Hello, ${sessionScope['verifiedUserName']}.
     </p>
+    <p>
+      <a href="document">New document</a>
+    </p>
   </c:otherwise>
 </c:choose>
 </body>

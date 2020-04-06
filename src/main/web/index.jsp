@@ -21,9 +21,7 @@
       Hello, ${sessionScope['verifiedUserName']}.
     </p>
     <p>
-      <input type="submit" value="View journal">
-      ///kk
-      // kkk
+      <a href="document">New document</a>
     </p>
   </c:otherwise>
 </c:choose>
