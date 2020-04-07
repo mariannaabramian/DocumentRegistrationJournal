@@ -5,25 +5,40 @@
 </head>
 <body>
 
-<form method="post" action="journal" enctype="application/x-www-form-urlencoded" title="Document">
+<form method="post" action="document" enctype="application/x-www-form-urlencoded">
+
+
+    <p>
+        Вы вошли в систему как ${sessionScope['verifiedUserName']}.
+    </p>
+
+    <p>
+        <label>
+            Импортер:
+        </label>
+    </p>
      <p>
         <label>
             Тип документа:
-            <input type="text" name="usernameField" value="${param['docType']}">
+            <input type="text" name="docTypeField" value="${param['docType']}">
         </label>
     </p>
     <p>
         <label>
             Название:
-            <input type="text" name="usernameField" value="${param['login']}">
+            <input type="text" name="titleField" value="${param['title']}">
         </label>
     </p>
 
     <p>
         <label>
             Внутрнний номер документа в системе импортера:
-            <input type="text" name="usernameField" value="${param['login']}">
+            <input type="text" name="importerDocNumField" value="${param['importerDocNum']}">
         </label>
+    </p>
+
+    <p>
+        <input type="submit">
     </p>
 
 </form>

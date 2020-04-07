@@ -22,11 +22,14 @@ public class ApplicationListener implements ServletContextListener {
         // или создать настройки стартовые
         // ничего не начнется пока этот метод не закончится. тут можно все инициализировать
         EntityManager manager = factory.createEntityManager();
+
         UsersDAO usersDAO = new UsersDAO(manager);
+
         if (usersDAO.findGroupByName("test") == null) {
             usersDAO.createGroup("test");
         }
 
+        // тут почему то ошибка возникает
         /*DocumentsDAO documentsDAO = new DocumentsDAO(manager);
         documentsDAO.addImporter("ООО РосИмпорт1", "1234567890", "Россия",
                 "Санкт-Петербург", "1-ая Советскяа улица д. 5", "Иванов Иван Иванович",

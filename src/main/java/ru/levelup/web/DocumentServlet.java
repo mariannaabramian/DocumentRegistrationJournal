@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/document")
+@WebServlet(urlPatterns = {"/document"})
 public class DocumentServlet  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,21 +38,34 @@ public class DocumentServlet  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DocType docType = DocType.APPLICATION;
-        String tytle = req.getParameter("tytle");
-        String importerDocNumber = req.getParameter("importerDocNumber");
-        String importerName = req.getParameter("importerName");
+        String tytle = req.getParameter("titleField");
+        String importerDocNumber = req.getParameter("importerDocNumField");
+        //String importerName = req.getParameter("importerName");
+
+        String verifiedUserName = req.getSession().getAttribute("verifiedUserName").toString();
 
         EntityManager manager = PersistenceUtils.createManager(req.getServletContext());
+
         DocumentsDAO documentsDAO = new DocumentsDAO(manager);
         UsersDAO usersDAO = new UsersDAO(manager);
-        try {
-            User user = new User();
-            user = usersDAO.findUserByLogin("User1");
 
-            Importer importer = documentsDAO.findImporterByName(importerName);
+        try {
+            User user = usersDAO.findUserByLogin(verifiedUserName);
+
+            //Importer importer = documentsDAO.findImporterByName(importerName);
             //if (importer == null) {
                // throw new IllegalStateException("No importer " + importerName + " found");
             //}
+
+            // пока добавим импортера. потом - сделать форму для добавления импортеров
+            Importer importer = new Importer();
+            importer.setImporterName("ООО РосИмпорт1");
+            importer.setINN("1234567890");
+            importer.setCountry("Россия");
+            importer.setCity("Санкт-Петербург");
+            importer.setStreetHouse("1-ая Советскяа улица д. 5");
+            importer.setHeadFIO("Иванов Иван Иванович");
+            importer.setAccountantFIO("Петрова Funny Ивановна");
 
             Document document = new Document();
             document.setDocType(docType);

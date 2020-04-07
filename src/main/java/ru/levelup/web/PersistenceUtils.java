@@ -6,7 +6,7 @@ import javax.servlet.ServletContext;
 
 
 // дурацкий класс
-//по контексту достает factory
+// по контексту достает factory
 
 public class PersistenceUtils {
     public static EntityManager createManager(ServletContext context) {
